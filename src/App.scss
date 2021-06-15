@@ -11,6 +11,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color:#f1f1f1;
 }
 
 .container {
@@ -21,6 +22,38 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:3rem;
     position: absolute;
     top: 0;
+}
+
+.weather-infos{
+    background: #000;
+    min-width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .units{
+            display: flex;
+        }
+    }
+    .mid{
+
+    }
+    .right{
+
+    }
+    .name{
+        font-size: 1.6rem;
+    }
+    .image{
+        height: 25%;
+        width: 100%;
+        object-fit: contain;
+    }
 }
