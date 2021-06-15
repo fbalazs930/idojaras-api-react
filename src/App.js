@@ -9,13 +9,14 @@ const App = () => {
   const [desc, setDesc] = useState("");
   const [weatherImg, setWeatherImg] = useState("");
   const [humidity, setHumidity] = useState(0);
+  const [wind, setWind] = useState(0);
   const getData = () => {
     Axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2cbb02872cc7e2a1ee53454e4b98b7db&lang=hu&units=metric`).then((response) => {
       setCityName(city);
       setTemp(response.data.main.temp);
       setDesc(response.data.weather[0].description);
       setHumidity(response.data.main.humidity);
-      console.log(response.data);
+      setWind(Math.round(response.data.wind.speed * 3.6, 0));
     })
   }
   useEffect(() => {
@@ -69,6 +70,9 @@ const App = () => {
         </p>
         <p className="humidity">
           Páratartalom: {humidity} %
+        </p>
+        <p className="wind">
+          Szél: {wind} km/h
         </p>
         <p className="desc">
           {desc.charAt(0).toUpperCase() + desc.slice(1)}
