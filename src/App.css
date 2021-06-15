@@ -1,10 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   font-family: sans-serif;
-  font-weight: bold;
 }
 
 body {
@@ -15,8 +12,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 
 .container {
   background-color: #333333a4;
@@ -38,88 +33,4 @@ body {
   position: absolute;
   top: 0;
 }
-
-.input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 30px;
-}
-
-
-input[type="text"] {
-  padding: 10px;
-  border: none;
-  background-color: transparent;
-  border-bottom: 4px solid #eee;
-  color: #eee;
-  font-size: 1.5rem;
-  width: 300px;
-}
-
-input[type="text"]::-webkit-input-placeholder {
-  color: #eee;
-}
-
-input[type="text"]:-ms-input-placeholder {
-  color: #eee;
-}
-
-input[type="text"]::-ms-input-placeholder {
-  color: #eee;
-}
-
-input[type="text"]::placeholder {
-  color: #eee;
-}
-
-input[type="text"]:focus {
-  outline: none;
-}
-
-.weather {
-  width: 50%;
-  height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 60px;
-  color: #eee;
-}
-
-.weather .name {
-  font-size: 3rem;
-}
-.weather .weather-image {
-  height: 100px;
-  width: 100px;
-}
-
-.weather .temp, .desc {
-  font-size: 2rem;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .input {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
+/*# sourceMappingURL=App.css.map */
