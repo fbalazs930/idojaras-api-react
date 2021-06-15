@@ -11,7 +11,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color:#f1f1f1;
+    color: #f1f1f1;
 }
 
 .container {
@@ -22,38 +22,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:3rem;
+    gap: 3rem;
     position: absolute;
     top: 0;
 }
 
-.weather-infos{
-    background: #000;
-    min-width: 60%;
+.weather-infos {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    .left{
+    justify-content: center;
+    text-align: center;
+    gap:1rem;
+    .hum-wind{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        .units{
-            display: flex;
-        }
-    }
-    .mid{
-
-    }
-    .right{
-
-    }
-    .name{
-        font-size: 1.6rem;
-    }
-    .image{
-        height: 25%;
-        width: 100%;
-        object-fit: contain;
+        gap:1rem;
     }
 }
