@@ -16,7 +16,7 @@ const App = () => {
   const [wind, setWind] = useState(0);
   const [img, setImg] = useState('01d');
   const getData = () => {
-    Axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2cbb02872cc7e2a1ee53454e4b98b7db&lang=hu&units=metric`).then((response) => {
+    Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2cbb02872cc7e2a1ee53454e4b98b7db&lang=hu&units=metric`).then((response) => {
       setCityName(city);
       setTemp(response.data.main.temp);
       setDesc(response.data.weather[0].description);
