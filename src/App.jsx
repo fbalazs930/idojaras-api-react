@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './App.css';
+import { WiStrongWind } from 'react-icons/wi';
+import { WiRaindrop } from 'react-icons/wi';
+import { FaSearchLocation } from 'react-icons/fa';
+
 
 const App = () => {
   const [city, setCity] = useState('Budapest');
@@ -19,6 +23,7 @@ const App = () => {
       setHumidity(response.data.main.humidity);
       setWind(Math.round(response.data.wind.speed * 3.6, 0));
       setImg(response.data.weather[0].icon);
+      setCity('');
     })
   }
   useEffect(() => {
@@ -28,21 +33,29 @@ const App = () => {
     if (e.target.value.length === 1) {
       e.target.value = e.target.value.toUpperCase();
     }
-  } 
+  }
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    getData();
+    document.querySelector('input').value = '';
+  }
+
+
   return (
     <div className='container'>
-      <div className="input">
+      <form className='input' onSubmit={onFormSubmit} action="">
         <input
           placeholder='Város'
           type='text'
           onChange={(e) => {
             toUppercase(e);
-            setCity(e.target.value)
+            setCity(e.target.value);
           }
           }
         />
-        <button type="button" onClick={getData}>Search</button>
-      </div>
+        <button type="button" onClick={getData}><FaSearchLocation className='search' /></button>
+      </form>
       <div className="weather-infos">
         <h1 className="name" id="name">
           {cityName}
@@ -52,40 +65,16 @@ const App = () => {
           {desc.charAt(0).toUpperCase() + desc.slice(1)}
         </p>
         <div className="deg">
-          <p>{Math.round(temp, 2)}&deg;C</p>
+          <p>{Math.round(temp, 2)} &deg;C</p>
         </div>
         <div className="hum-wind">
           <p className="humidity">
-            Páratartalom: {humidity} %
+            <WiRaindrop className='react-icon' /> {humidity} %
           </p>
           <p className="wind">
-            <i className="fas fa-wind"></i> {wind} km/h
+            <WiStrongWind className='react-icon' /> {wind} km/h
           </p>
         </div>
-
-        {/* <div className="left">
-
-          <img src={`http://openweathermap.org/img/wn/${img}.png`} alt="" className="image" />
-        </div>
-        <div className="mid">
-          <p className="humidity">
-            Páratartalom: {humidity} %
-          </p>
-          <p className="wind">
-            Szél: {wind} km/h
-          </p>
-        </div>
-        <div className="right">
-          <h1 className="name" id="name">
-            {cityName}
-          </h1>
-          <div className="time">
-            time
-          </div>
-          <p className="desc">
-            {desc.charAt(0).toUpperCase() + desc.slice(1)}
-          </p>
-        </div> */}
       </div>
     </div>
   );
