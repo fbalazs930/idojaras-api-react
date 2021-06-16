@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://idojaras-api-react.pages.dev/"
+  "proxy": "http://localhost:3000"
 }
