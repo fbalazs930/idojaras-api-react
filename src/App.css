@@ -95,6 +95,12 @@ body {
   color: #bbbbbb;
 }
 
+@media only screen and (max-width: 990px) {
+  .container .input input {
+    width: 60vw;
+  }
+}
+
 .container .input button {
   height: 100%;
   padding: 0.5rem 0.7rem;

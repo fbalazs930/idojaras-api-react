@@ -56,6 +56,9 @@ body {
             &::placeholder {
                 color: #bbbbbb;
             }
+            @media only screen and (max-width:990px){
+                width:60vw;
+            }
         }
         button {
             height: 100%;
